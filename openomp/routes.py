@@ -14,7 +14,8 @@ def get_thumbnail(configurator):
 def home():
     page = request.args.get('page', 1, type=int)
     items = Item.query.order_by(desc(Item.id)).paginate(page=page, per_page=48)
-    return render_template('home.html', items=items, get_thumbnail=get_thumbnail)
+    #return render_template('home.html', items=items, get_thumbnail=get_thumbnail)
+    return render_template('credits.html')
 
 @app.route('/add-item', methods=['GET', 'POST'])
 def add_item():
