@@ -10,6 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qqyaamzzkvorvh:f480ce43646794c02d634ee386b6e6f17b50e5addb59cc1e5dce172010b3052f@ec2-54-72-155-238.eu-west-1.compute.amazonaws.com:5432/d3fo6sk91rc21s'
 db = SQLAlchemy(app)
 
+# Add secret key for forms
 app.config['SECRET_KEY'] = '59f063a2e5406614813c5b07e129fdrb'
 
 
