@@ -1,2 +1,2 @@
-# openomp
+# OpenOMP
 Open online market platform
