@@ -1,5 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Home of OpenOMP</h1>
-{% endblock content %}
+<div class="col-md-12">
+    <div class="row gallery pt-3 pb-3">
+        {% for item in items.items %}
+            <div class="col-md-2 gallery-item" style="padding-bottom:20px">
+                <div class="card" style="border-radius: 8px;">
+                    <a class="card-body p-0" style="border-radius: 8px;" href="#">
+                        <img class="card-img" style="border-radius: 8px;" src="data:;base64,{{ get_thumbnail(item) }}" alt="Card image cap"/>
+                    </a>
+                </div>
+                <div class="card-title pb-0 pt-1" style="font-size: 1.25rem; margin-bottom: 1px;">{{ item.title }}</div>
+                <div class="" style="font-size: 0.9rem;">{{ item.description }}</div>
+            </div> 
+        {% endfor %}       
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if items.page == 1 %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_for('home', page=items.page-1) }}" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+            {% endif %}
+            {% for page_num in items.iter_pages(left_edge=0, right_edge=0, left_current=1, right_current=2) %}
+                {% if page_num %}
+                    {% if items.page == page_num %}
+                        <li class="page-item active">
+                            <a class="page-link" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ url_for('home', page=page_num) }}">{{ page_num }}</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% if items.page == items.pages %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_for('home', page=items.page+1) }}">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+      </nav>
+</div>{% endblock content %}

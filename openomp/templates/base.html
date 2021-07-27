@@ -25,14 +25,14 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-light theme-color-custom fixed-top" style="background-color:lightgray;">
+        <nav class="navbar navbar-light theme-color-custom fixed-top" style="background-color:white;">
             <a class="navbar-brand" href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='cart.png') }}" width="30" height="30" class="d-inline-block align-top" alt=""></img>
                 OpenOMP
             </a>
             <div>
-                <a href="{{ url_for('home') }}" class="">
-                    <span data-feather="plus-circle" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add a new Configurator"></span>
+                <a href="{{ url_for('add_item') }}" class="">
+                    <span data-feather="plus-circle" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add a new item"></span>
                 </a>
                 <!--
                 <a href="{{ url_for('home') }}" class="pr-2">   
