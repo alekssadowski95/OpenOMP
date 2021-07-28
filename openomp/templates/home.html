@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="col-md-12">
-    <div class="row gallery pt-3 pb-3">
+<div class="container col-md-10 col-sm-12">
+
+    <!-- items display/ gallery -->
+    <h2 class="pt-3 pl-3" style="font-weight: 700;">All items</h2>
+    <div class="row gallery pb-3">
         {% for item in items.items %}
-            <div class="col-md-2 gallery-item" style="padding-bottom:20px">
-                <div class="card" style="border-radius: 8px;">
-                    <a class="card-body p-0" style="border-radius: 8px;" href="#">
-                        <img class="card-img" style="border-radius: 8px;" src="data:;base64,{{ get_thumbnail(item) }}" alt="Card image cap"/>
-                    </a>
+            <div class="col-md-6 col-sm-4 col-lg-4 col-sm-6 col-xl-3 gallery-item pl-5 pr-5 pb-4 pt-4">
+                <div class="row">
+                    <div class="col-sm-4 pl-2 pr-2" style="border-radius: 8px;">
+                        <a class="card-body p-0" style="border-radius: 8px;" href="{{ url_for('item', id=item.id) }}">
+                            <img class="card-img" style="border-radius: 8px;" src="data:;base64,{{ get_thumbnail(item) }}" alt="Card image cap"/>
+                        </a>
+                    </div>
+                    <div class="col-sm-8 pl-2 pr-2">
+                        <div class="pb-0 pt-0 mt-0" style="font-size: 1rem; margin-bottom: 1px;">{{ item.title }}</div>
+                        <div class="" style="font-size: 0.8rem;">This is the short item description.</div>
+                    </div>   
                 </div>
-                <div class="card-title pb-0 pt-1" style="font-size: 1.25rem; margin-bottom: 1px;">{{ item.title }}</div>
-                <div class="" style="font-size: 0.9rem;">{{ item.description }}</div>
-            </div> 
+            </div>
         {% endfor %}       
     </div>
+
+    <!-- Page navigation -->
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             {% if items.page == 1 %}
@@ -49,5 +58,6 @@
                 </li>
             {% endif %}
         </ul>
-      </nav>
-</div>{% endblock content %}
+    </nav>
+</div>
+{% endblock content %}
