@@ -30,18 +30,16 @@
                 <img src="{{ url_for('static', filename='cart.png') }}" width="28" height="28" class="d-inline-block align-top" alt=""></img>
                 OpenOMP
             </a>
-            <div>
+            <div>           
                 <a href="{{ url_for('add_item') }}" class="">
                     <span data-feather="plus-circle" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add a new item"></span>
                 </a>
-                <!--
-                <a href="{{ url_for('home') }}" class="pr-2">   
-                    <span data-feather="user" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;"></span>
+                <a href="{{ url_for('messages') }}" class="ml-1">
+                    <span data-feather="message-circle" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Open your Messages"></span>
                 </a>
-                <a href="{{ url_for('home') }}">
-                    <span data-feather="settings" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;"></span>
+                <a href="{{ url_for('login') }}">
+                    <button type="button" class="btn btn-primary ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login with your account">Login<span class="ml-1" data-feather="user" style="width: 22px; height: 22px; color: white; stroke-width: 0.1rem;"></span></button>
                 </a>
-                 <button type="button" class="btn btn-outline-dark btn-sm" style="border-radius: 20px; border-width: 0.125rem; font-weight: 600;">Login</button> -->
             </div>      
         </nav>
 

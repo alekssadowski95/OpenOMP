@@ -59,3 +59,7 @@ def register():
         # create new user
         return redirect(url_for('home'))
     return render_template('register.html', form=form)
+
+@app.route('/messages')
+def messages():
+    return render_template('messages.html')
