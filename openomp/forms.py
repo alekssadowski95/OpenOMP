@@ -7,14 +7,14 @@ class AddItemForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired(), Length(min=2, max=10)])
     description = TextAreaField('Description', validators=[DataRequired(), Length(min=2, max=1000)])
     item_image = FileField('Thumbnail image', validators=[FileAllowed(['png', 'jpg'])])
-    submit = SubmitField('Add')
+    submit = SubmitField('Add new item')
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=12, max=32)])
     submit = SubmitField('Login')
 
 class RegisterForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=12, max=32)])
     submit = SubmitField('Register')

@@ -59,12 +59,12 @@
                     {% endfor %}
                 {% endif %}
             </div>
-        <div>{{ form.submit(class="w-100 btn btn-lg btn-primary mt-3") }}</div>
+        <div>{{ form.submit(class="w-100 btn btn-lg btn-success mt-3") }}</div>
     </fieldset>
-    <p class="pb-0 mb-0">Don't have an account?</p>
-    <a href="{{ url_for('register') }}">Click here to register</a>
+    <p class="pb-0 mb-0">Don't have an account yet?</p>
+    <a href="{{ url_for('register') }}">Click here to register a new account</a>
     <p class="mt-5 mb-0 text-muted">&copy; Aleksander Sadowski 2021</p>
-    <a class="mt-5 mb-3 text-muted" href="#">Credits</a>
+    <a class="mt-5 mb-3 text-muted" href="{{ url_for('credits') }}">Credits</a>
   </form>
 </main>  
   </body>

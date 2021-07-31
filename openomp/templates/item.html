@@ -5,16 +5,19 @@
 
     <!-- Item oveview -->
     <div class="row pt-5">
-        <div class="col-sm-3" style="border-radius: 8px;">
-            <a class="card-body p-0" style="border-radius: 8px;">
-                <img class="card-img" style="border-radius: 8px;" src="data:;base64,{{ get_thumbnail(item) }}" alt="Card image cap"/>
+        <div class="col-sm-3">
+            <a class="card-body p-0">
+                <img class="card-img" style="border-radius: 16px;" src="data:;base64,{{ get_thumbnail(item) }}" alt="Card image cap"/>
             </a>
         </div>
         <div class="col-sm-9">
             <div class="card-title pb-0 pt-1" style="font-size: 1.25rem; margin-bottom: 1px;">{{ item.title }}</div>
-            <div style="font-size: 0.9rem;">ID: {{ item.id }}</div>
+            <div style="font-size: 0.9rem;">Item-ID: {{ item.id }}</div>
+            <div style="font-size: 0.9rem;">Owner: <a href="{{ url_for('user', id=user.id) }}">{{ user.username }}</a></div>
             <div class="mt-3" style="font-size: 0.9rem;">{{ item.description }}</div>
-            <button class="btn btn-success mt-3">Chat</button>
+            <a href="{{ url_for('messages') }}">
+                <button class="btn btn-success mt-3">Chat with Creator</button>
+            </a>        
         </div>   
     </div>
 
