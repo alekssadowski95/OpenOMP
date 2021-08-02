@@ -110,7 +110,9 @@ def user(id):
     '''
     user = User.query.filter_by(id = id).first()
     if user:
-        return render_template('user.html', user=user)
+        page = request.args.get('page', 1, type=int)
+        items = Item.query.filter_by(user_id = user.id).order_by(desc(Item.id)).paginate(page=page, per_page=12)
+        return render_template('user.html', user=user, items=items, get_thumbnail=get_thumbnail)
     else:
         return redirect(url_for('home'))
 
