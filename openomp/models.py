@@ -20,7 +20,8 @@ class User(db.Model, UserMixin):
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(40), nullable=False)
-    description = db.Column(db.String(500), nullable=False)
+    short_description = db.Column(db.String(100), nullable=False)
+    long_description = db.Column(db.String(1000), nullable=False)
     date_created = db.Column(db.DateTime, nullable= False, default=datetime.utcnow)
     thumbnail_img = db.Column(db.LargeBinary, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

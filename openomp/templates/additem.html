@@ -15,18 +15,29 @@
                             {% endfor %}
                         </div>
                 {% else %}
-                    {{ form.title(class="form-control form-control-lg", autocomplete="off") }}
+                {{ form.title(class="form-control form-control-lg", autocomplete="off") }}
                 {% endif %}
-                {{ form.description.label(class="form-control-label pt-3") }}     
-                {% if form.description.errors %}
-                    {{ form.description(class="form-control form-control-lg is-invalid") }}
+                {{ form.short_description.label(class="form-control-label pt-3") }}     
+                {% if form.short_description.errors %}
+                    {{ form.short_description(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form.description.errors %}
+                            {% for error in form.short_description.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                 {% else %}
-                    {{ form.description(class="form-control form-control-lg", autocomplete="off") }}
+                    {{ form.short_description(class="form-control form-control-lg", autocomplete="off") }}
+                {% endif %}
+                {{ form.long_description.label(class="form-control-label pt-3") }}     
+                {% if form.long_description.errors %}
+                    {{ form.long_description(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.long_description.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                {% else %}
+                    {{ form.long_description(class="form-control form-control-lg", autocomplete="off") }}
                 {% endif %}
                 {{ form.item_image.label(style="font-weight:500;", class="mt-3") }}
                 {{ form.item_image(class="form-control-file") }}

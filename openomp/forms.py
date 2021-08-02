@@ -4,8 +4,9 @@ from wtforms.fields import StringField, SubmitField, TextAreaField, PasswordFiel
 from wtforms.validators import DataRequired, Length
 
 class AddItemForm(FlaskForm):  
-    title = StringField('Title', validators=[DataRequired(), Length(min=2, max=10)])
-    description = TextAreaField('Description', validators=[DataRequired(), Length(min=2, max=1000)])
+    title = StringField('Title', validators=[DataRequired(), Length(min=2, max=40)])
+    short_description = TextAreaField('Short Description', validators=[DataRequired(), Length(min=2, max=100)])
+    long_description = TextAreaField('Description', validators=[DataRequired(), Length(min=2, max=1000)])
     item_image = FileField('Thumbnail image', validators=[FileAllowed(['png', 'jpg'])])
     submit = SubmitField('Add new item')
 

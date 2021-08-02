@@ -49,7 +49,7 @@ def add_item():
                 with open(f"{os.path.join(app.root_path,'static','placeholder_icon.png')}", 'rb') as file:
                     data = file.read()
                     thumbnail_img = data
-            item = Item(title=form.title.data, description=form.description.data, thumbnail_img=thumbnail_img, user_id=current_user.id)
+            item = Item(title=form.title.data, short_description=form.short_description.data, long_description=form.long_description.data, thumbnail_img=thumbnail_img, user_id=current_user.id)
             db.session.add(item)
             db.session.commit()
             return redirect(url_for('home'))
