@@ -1,11 +1,11 @@
 from flask.helpers import flash
 from openomp import app, db, bcrypt
-from .forms import AddItemForm, LoginForm, RegisterForm
-from .models import Item, User
+from .forms import AddItemForm, LoginForm, MessageForm, RegisterForm
+from .models import Item, Message, User
 
 from flask import render_template, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user
-from sqlalchemy import desc
+from sqlalchemy import desc, or_
 
 import os
 import base64
@@ -39,21 +39,21 @@ def add_item():
     ''' Add a new item.
     '''
     if current_user.is_authenticated:
-        add_item_form = AddItemForm()
-        if add_item_form.validate_on_submit():
+        form = AddItemForm()
+        if form.validate_on_submit():
             print('Added item')
             thumbnail_img = None
-            if add_item_form.item_image.data:
-                thumbnail_img = request.files[add_item_form.item_image.name].read()
+            if form.item_image.data:
+                thumbnail_img = request.files[form.item_image.name].read()
             else:
                 with open(f"{os.path.join(app.root_path,'static','placeholder_icon.png')}", 'rb') as file:
                     data = file.read()
                     thumbnail_img = data
-            item = Item(title=add_item_form.title.data, description=add_item_form.description.data, thumbnail_img=thumbnail_img, user_id=current_user.id)
+            item = Item(title=form.title.data, description=form.description.data, thumbnail_img=thumbnail_img, user_id=current_user.id)
             db.session.add(item)
             db.session.commit()
             return redirect(url_for('home'))
-        return render_template('additem.html', title='Add your item', form=add_item_form) 
+        return render_template('additem.html', title='Add your item', form=form) 
     return redirect(url_for('home'))
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -82,16 +82,29 @@ def register():
         user = User(username=form.username.data, hashed_password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash('You successfully registered your account.', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
-@app.route('/messages')
+@app.route('/messages', methods=['GET', 'POST'])
 def messages():
     ''' Show the messages of the current user.
     '''
     if current_user.is_authenticated:
-        return render_template('messages.html', title='Messages')
+        messages = Message.query.filter(or_(Message.sender_id==current_user.id, Message.receiver_id==current_user.id)).order_by(desc(Message.date_sent))
+        return render_template('messages.html', title='Messages', messages=messages)
+    return redirect(url_for('login'))
+
+@app.route('/new-message/<receiver_id>', methods=['GET', 'POST'])
+def new_message(receiver_id):
+    if current_user.is_authenticated:
+        form = MessageForm()
+        user = User.query.filter_by(id = receiver_id).first()
+        if form.validate_on_submit(): 
+            message = Message(sender_id=current_user.id, receiver_id=receiver_id, text=form.text.data)
+            db.session.add(message)
+            db.session.commit()
+            return redirect(url_for('messages'))
+        return render_template('new-message.html', form=form, user=user)
     return redirect(url_for('login'))
 
 @app.route('/logout')

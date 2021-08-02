@@ -35,4 +35,4 @@ def run(count):
     db.session.commit()
 
 if __name__ == '__main__':
-    run(500)
+    run(100)

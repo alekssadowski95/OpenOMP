@@ -1,7 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="pt-3 container col-md-10">
-    <h1 style="font-weight: 700; font-size: 2rem;">Messages</h1>
+<div class="pt-3 pb-3 container col-md-10">
+    <h1 class="pb-3" style="font-weight: 700; font-size: 2rem;">Messages</h1>
+    <div class="list-group">
+        {% for message in messages %}
+            {% if message.sender_id == current_user.id %}
+                <div class="card mb-1">
+                    <div class="card-body">
+                      <h5 class="card-title">To: <a style="color:black" href="{{ url_for('user', id=message.message_receiver.id) }}">{{ message.message_receiver.username }}</a></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ message.date_sent }}</h6>
+                      <p class="card-text">{{ message.text }}</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="card mb-1">
+                    <div class="card-body">
+                      <h5 class="card-title">From: <a style="color:black" href="{{ url_for('user', id=message.message_sender.id) }}">{{ message.message_sender.username }}</a></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ message.date_sent }}</h6>
+                      <p class="card-text">{{ message.text }}</p>
+                      <a href="{{ url_for('new_message', receiver_id=message.message_sender.id) }}" class="card-link">Answer</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+      </div>
 </div>
 {% endblock content %}

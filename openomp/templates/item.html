@@ -12,10 +12,9 @@
         </div>
         <div class="col-sm-9">
             <div class="card-title pb-0 pt-1" style="font-size: 1.25rem; margin-bottom: 1px;">{{ item.title }}</div>
-            <div style="font-size: 0.9rem;">Item-ID: {{ item.id }}</div>
-            <div style="font-size: 0.9rem;">Owner: <a href="{{ url_for('user', id=user.id) }}">{{ user.username }}</a></div>
+            <div style="font-size: 0.9rem;">By <a style="color:black" href="{{ url_for('user', id=user.id) }}">{{ user.username }}</a></div>
             <div class="mt-3" style="font-size: 0.9rem;">{{ item.description }}</div>
-            <a href="{{ url_for('messages') }}">
+            <a href="{{ url_for('new_message', receiver_id=user.id) }}">
                 <button class="btn btn-success mt-3">Chat with Creator</button>
             </a>        
         </div>   
