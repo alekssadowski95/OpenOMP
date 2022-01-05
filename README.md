@@ -18,16 +18,16 @@ Because of its small size, the platform can be hosted on heroku at no cost.
 
 ## Features
 ### Explore all offers
+The homepage displays all the latest items that have been added by users of this platform.
 
 
-### Users accounts
+### Users accounts  
+Users can create their own accounts with their email and a password.
 
 
 ### Messaging sellers
-Through the messaging system users can connect with sellers.
+Through the messaging system users can connect with sellers. its possible to message sellers directly though their item pages.
 
 
 ### Selling items
-
-
-### Grow the niche market
+Every user can sell their items by creating a new item page. 
