@@ -4,8 +4,7 @@ OpenOMP is an open-source online market platform that can be used to quickly cre
 Niche markets are usually organized through specialized forums. Having a dedicated platform for a niche market helps the market to grow by making it more accessible than searching through obscure forums.
 
 ## Getting started
-You can try out OpenOMP live by clicking on this link:
-
+You can try out OpenOMP live here:
 https://heroku.com
 
 
