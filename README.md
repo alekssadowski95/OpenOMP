@@ -1,5 +1,5 @@
 # OpenOMP
-OpenOMP is an open-source online market platform that can be used to quickly create niche online markets.
+OpenOMP is an open-source online market platform that can be used to quickly create niche online markets. Niche markets are usually organized through specialized forums. Having a dedicated platform for a niche market helps the market to grow by making it more accessible than searching through obscure forums.
 
 ## Getting started
 To test out the platform locally, download the whole project, install all the python dependencies using the requirements.txt file and run the app.py module. At least Python 3.8 needs to be installed to run the web app.
@@ -17,10 +17,10 @@ Because of its small size, the platform can be hosted on heroku at no cost.
 
 
 ### Messaging sellers
+Through the messaging system users can connect with sellers.
 
 
-### Selling own items
+### Selling items
 
 
-### Connect with niche
-Through the messaging system users can connect with their niche market. Having a dedicated platform for a nicht market helps the market to grow by making it more accessible than obscure forums.
+### Grow the niche market
