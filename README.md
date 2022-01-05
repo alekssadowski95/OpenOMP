@@ -10,10 +10,10 @@ You can modify the existing codebase to fit your niche market. The platform is b
 Because of its small size, the platform can be hosted on heroku at no cost.
 
 ## Features
-### Explore what people have to offer
+### Explore all offers
 
 
-### Users can create their own accounts
+### Users accounts
 
 
 ### Messaging sellers
