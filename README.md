@@ -13,14 +13,14 @@ Because of its small size, the platform can be hosted on heroku at no cost.
 ### Explore what people have to offer
 
 
-### Create a new new account
+### Users can create their own accounts
 
 
-### Message sellers
+### Messaging sellers
 
 
-### Sell your own items
+### Selling own items
 
 
-### Connect with your niche
-Through the messaging system you can connect with your niche market and see what new things people have to offer.
+### Connect with niche
+Through the messaging system users can connect with their niche market. Having a dedicated platform for a nicht market helps the market to grow by making it more accessible than obscure forums.
