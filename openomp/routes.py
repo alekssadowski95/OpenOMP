@@ -132,3 +132,8 @@ def user(id):
 @app.route('/credits')
 def credits():
     return render_template('credits.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+

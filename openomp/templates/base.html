@@ -19,7 +19,7 @@
         {% endif %}
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" sizes="48x48" href="{{ url_for('static', filename='cart.png') }}">
+        <link rel="icon" type="image/png" sizes="48x48" href="{{ url_for('static', filename='bag.png') }}">
 
         {% block style %}{% endblock style %}
     </head>
@@ -27,7 +27,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-light theme-color-custom fixed-top" style="background-color:white;">
             <a class="navbar-brand" href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='cart.png') }}" width="28" height="28" class="d-inline-block align-top" alt=""></img>
+                <img src="{{ url_for('static', filename='bag.png') }}" width="28" height="28" class="d-inline-block align-top" alt=""></img>
                 OpenOMP
             </a>
             <div>
@@ -45,9 +45,13 @@
                     <span data-feather="log-out" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout"></span>
                 </a>
                 {% else %}
+                <a href="{{ url_for('about') }}" class="">
+                    <span data-feather="help-circle" style="width: 30px; height: 30px; color: black; stroke-width: 0.075rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="About OpenOMP"></span>
+                </a>
                 <a href="{{ url_for('login') }}">
                     <button type="button" class="btn btn-success ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login with your account">Login<span class="ml-1" data-feather="user" style="width: 22px; height: 22px; color: white; stroke-width: 0.1rem;"></span></button>
                 </a>
+                
                 {% endif %}
             </div>      
         </nav>
