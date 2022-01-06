@@ -33,7 +33,7 @@ The homepage displays all the latest items that have been added by users of this
 ![](readme-images/openomp-user-items.png)
 
 ### Users accounts  
-Users can create their own accounts with their email and a password.
+Users can create their own accounts with using a username and a password.
 
 
 ![](readme-images/openomp-user-login.png)
