@@ -19,17 +19,26 @@ You can modify the existing codebase to fit your niche market. The platform is b
 Because of its small size, the platform can be hosted on heroku at no cost.
 
 ## Features
-### Explore all offers
+### Explore sellers
 The homepage displays all the latest items that have been added by users of this platform.
 
+
+![](readme-images/openomp-home.png)
+
+### Becoming a seller
+Every user can sell their items by creating a new item page. 
+
+
+![](readme-images/openomp-home.png)
 
 ### Users accounts  
 Users can create their own accounts with their email and a password.
 
 
+![](readme-images/openomp-home.png)
+
 ### Messaging sellers
 Through the messaging system users can connect with sellers. its possible to message sellers directly though their item pages.
 
 
-### Selling items
-Every user can sell their items by creating a new item page. 
+![](readme-images/openomp-home.png)
