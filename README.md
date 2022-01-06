@@ -27,7 +27,7 @@ Through the messaging system users can connect with sellers. its possible to mes
 ![](readme-images/openomp-messages.png)
 
 ### Explore sellers
-The homepage displays all the latest items that have been added by users of this platform.
+The sellers page shows all items this seller has to offer.
 
 
 ![](readme-images/openomp-user-items.png)
