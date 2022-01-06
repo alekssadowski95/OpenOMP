@@ -20,6 +20,12 @@ Because of its small size, the platform can be hosted on heroku at no cost.
 
 ## Features
 
+### Item pages
+Ever item that has been added by a user has its own page, which also contains a long description of the item.
+
+
+![](readme-images/openomp-handcrafted-cup.png)
+
 ### Messaging sellers
 Through the messaging system users can connect with sellers. its possible to message sellers directly though their item pages.
 
