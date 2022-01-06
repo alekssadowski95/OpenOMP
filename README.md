@@ -6,7 +6,7 @@ Niche markets are usually organized through specialized forums. Having a dedicat
 ![](readme-images/openomp-home.png)
 
 ## Getting started
-You can try out OpenOMP live here:
+You can try out an example OpenOMP platform here:
 
 https://heroku.com
 
