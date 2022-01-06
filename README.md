@@ -32,7 +32,7 @@ The sellers page shows all items this seller has to offer.
 
 ![](readme-images/openomp-user-items.png)
 
-### Users accounts  
+### User accounts  
 Users can create their own accounts with using a username and a password.
 
 
