@@ -32,16 +32,16 @@ The homepage displays all the latest items that have been added by users of this
 
 ![](readme-images/openomp-user-items.png)
 
-### Becoming a seller
-Every user can sell their items by creating a new item page. 
-
-
-![](readme-images/openomp-add-new-item.png)
-
 ### Users accounts  
 Users can create their own accounts with their email and a password.
 
 
 ![](readme-images/openomp-user-login.png)
+
+### Becoming a seller
+Every user can sell their items by creating a new item page. 
+
+
+![](readme-images/openomp-add-new-item.png)
 
 
