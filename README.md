@@ -8,7 +8,7 @@ Niche markets are usually organized through specialized forums. Having a dedicat
 ## Getting started
 You can try out an example OpenOMP platform here:
 
-https://heroku.com
+https://openomp.herokuapp.com/
 
 
 To test out the platform locally, download the whole project, install all the python dependencies using the requirements.txt file and run the app.py module. At least Python 3.8 needs to be installed to run the web app.
