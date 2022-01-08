@@ -1,5 +1,5 @@
 # OpenOMP
-OpenOMP is an open-source online market platform that can be used to quickly create niche online markets. 
+**OpenOMP is an open-source online market platform that can be used to quickly create niche online markets.** :shopping_cart:
 
 Niche markets are usually organized through specialized forums. Having a dedicated platform for a niche market helps the market to grow by making it more accessible than searching through obscure forums.
 
