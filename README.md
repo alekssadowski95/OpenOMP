@@ -11,7 +11,12 @@ You can try out an example OpenOMP platform here:
 https://openomp.herokuapp.com/
 
 
-To test out the platform locally, download the whole project, install all the python dependencies using the requirements.txt file and run the app.py module. At least Python 3.8 needs to be installed to run the web app.
+To test out the platform locally:
+1. Download the whole project
+2. Install all the python dependencies using requirements.txt
+3. Run the app.py module. 
+
+At least Python 3.8 needs to be installed to run this web app.
 
 ## Create your own online market
 You can modify the existing codebase to fit your niche market. The platform is build with the web-framework flask and is well known by many developers. This way its easy to find people to help you create your own platform.
